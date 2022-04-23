@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/doctor01"
+        android:title="Doctor"
+        android:icon="@drawable/icon_doctor"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/Appointments01"
+        android:title="Appointments"
+        android:icon="@drawable/icon_appo"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/testre"
+        android:title="Test Report"
+        android:icon="@drawable/icon_testreport"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+</menu>

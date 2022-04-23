@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".hospital_application.MainFragment"
+    android:background="#caf0f8">
+
+    <Button
+        android:id="@+id/btngologin"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:iconPadding="4dp"
+        android:text="  Log in "
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        app:icon="@drawable/icon_button_login"
+        app:iconSize="30dp"
+        app:backgroundTint="#0096c7"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"/>
+
+    <Button
+        android:id="@+id/btngosignup"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:iconPadding="4dp"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        app:icon="@drawable/icon_button_signup"
+        app:iconSize="30dp"
+        app:backgroundTint="#0096c7"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"/>
+
+    <ImageView
+        android:id="@+id/hospital"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/info_hospital"
+        android:layout_above="@id/animationView"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/hospitalphoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/hospital_logo" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_above="@id/btngologin"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/heart_beat" />
+
+</RelativeLayout>

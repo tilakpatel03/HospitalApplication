@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "892695402739",
+    "project_id": "hospital-management-47d65",
+    "storage_bucket": "hospital-management-47d65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892695402739:android:d3c0d7e35d74fe6462bf86",
+        "android_client_info": {
+          "package_name": "com.example.hospitalapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892695402739-nrrd2va9fln1255pjs49tm0e9i72erlj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hospitalapplication",
+            "certificate_hash": "bea91c1ed6ebf16e72fd5082559f04ae068c87e8"
+          }
+        },
+        {
+          "client_id": "892695402739-2bbi7i0bonbe2ggg9bphq0pqoiv86h2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdx19clCq1L8i-ZH8s0Fx98lv14LDwg9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892695402739-2bbi7i0bonbe2ggg9bphq0pqoiv86h2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
