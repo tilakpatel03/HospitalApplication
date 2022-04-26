@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,14 +7,10 @@ import androidx.navigation.Navigation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Switch;
 
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.ActivityAdminBinding;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
-
-import javax.annotation.meta.When;
 
 public class AdminActivity extends AppCompatActivity {
     private ActivityAdminBinding binding;
@@ -24,7 +20,6 @@ public class AdminActivity extends AppCompatActivity {
         binding = ActivityAdminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
-
 
         binding.bnv.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

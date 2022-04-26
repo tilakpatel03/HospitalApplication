@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.FragmentLoginBinding;
+import com.example.hospitalapplication.hospital_application.DashboardActivity;
+import com.example.hospitalapplication.hospital_application.admin.AdminActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -39,7 +41,7 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if(FirebaseAuth.getInstance().getCurrentUser()!=null){
-            startActivity(new Intent(getActivity(),DashboardActivity.class));
+            startActivity(new Intent(getActivity(), DashboardActivity.class));
             getActivity().finish();
         }
 
@@ -60,10 +62,11 @@ public class LoginFragment extends Fragment {
 
             if(email.equals("t@gmail.com") && password.equals("123456")) {
 
-
                 Intent i = new Intent(getActivity(), AdminActivity.class);
                 startActivity(i);
 
+            }else {
+                Toast.makeText(getActivity(), "................", Toast.LENGTH_SHORT).show();
             }
 
             if (!email.isEmpty() && !password.isEmpty()){
@@ -73,7 +76,6 @@ public class LoginFragment extends Fragment {
                         Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT).show();
                         Navigation.findNavController(getView()).navigate(R.id.action_loginFragment_to_dashboardActivity);
                         getActivity().finish();
-
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {

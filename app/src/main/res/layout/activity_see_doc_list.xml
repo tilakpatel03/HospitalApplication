@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".hospital_application.SeeDocListActivity"
+    android:background="#ffffff">
+
+    <include
+        android:id="@+id/toolbardashboard"
+        layout="@layout/actionbar_main"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="20dp"
+        android:layout_below="@id/toolbardashboard">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvdoc">
+
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

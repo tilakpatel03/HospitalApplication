@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.hospitalapplication.databinding.ActivitySplashScreenBinding;
+import com.example.hospitalapplication.hospital_application.authentication.UserActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private ActivitySplashScreenBinding binding;
@@ -25,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 }catch (Exception e){
 
                 }
-                Intent i = new Intent(SplashScreenActivity.this,UserActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, UserActivity.class);
                 startActivity(i);
                 finish();
             }

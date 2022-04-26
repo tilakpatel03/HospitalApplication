@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.authentication;
 
 import android.os.Bundle;
 
@@ -29,8 +29,6 @@ private FragmentMainBinding binding;
         binding.btngologin.setOnClickListener(view1 -> {
             Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_loginFragment);
         });
-        binding.btngosignup.setOnClickListener(view1 -> {
-            Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_signupFragment);
-        });
+
     }
 }

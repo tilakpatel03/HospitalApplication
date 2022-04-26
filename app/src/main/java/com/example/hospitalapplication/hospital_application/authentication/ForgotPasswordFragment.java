@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.authentication;
 
 import android.os.Bundle;
 
@@ -36,19 +36,26 @@ public class ForgotPasswordFragment extends Fragment {
         binding.btnforgotpassword.setOnClickListener(view1 -> {
             String email = binding.forgotemail.getText().toString().trim();
 
-            auth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Toast.makeText(getActivity(), "Check Your Gmail", Toast.LENGTH_SHORT).show();
+            if (!email.isEmpty()){
+                auth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(getActivity(), "Check Your Gmail", Toast.LENGTH_SHORT).show();
 
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getActivity(), "Enter a valid gmail", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Enter a valid gmail", Toast.LENGTH_SHORT).show();
 
-                }
-            });
+                    }
+                });
+            }else {
+//                Toast.makeText(getActivity(), "Invalid Gmail", Toast.LENGTH_SHORT).show();
+                binding.forgotemail.setError("Fill the gmail");
+            }
+
+            
         });
 
     }

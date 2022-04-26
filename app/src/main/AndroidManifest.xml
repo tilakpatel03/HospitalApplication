@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalApplication">
         <activity
-            android:name=".hospital_application.AdminActivity"
-            android:exported="true" >
-
-        </activity>
+            android:name=".hospital_application.SeeDocListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".hospital_application.admin.AdminActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".hospital_application.DashboardActivity"
             android:exported="false" />
@@ -29,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".hospital_application.UserActivity"
+            android:name=".hospital_application.authentication.UserActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

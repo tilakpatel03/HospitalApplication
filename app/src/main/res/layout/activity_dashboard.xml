@@ -8,15 +8,125 @@
     android:id="@+id/Drawer"
     android:background="#ffffff">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/toolbardashboard"
-            layout="@layout/actionbar_main"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <include
+                android:id="@+id/toolbardashboard"
+                layout="@layout/actionbar_main"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/doctorcard"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                android:layout_below="@id/toolbardashboard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="170dp"
+                        app:srcCompat="@drawable/doctor_tilak"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Visit a Doctor"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Confirmed appointments"
+                            android:textSize="15dp"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="#606060"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/testreportcard"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                android:layout_below="@id/doctorcard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="170dp"
+                        app:srcCompat="@drawable/labtest_tilak"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lab Tests"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Book all types lab tests"
+                            android:textSize="15dp"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="#606060"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
     
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

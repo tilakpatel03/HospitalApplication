@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/tvdoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Add Doctor Information"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ivp"
+            android:layout_below="@+id/tvdoc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="10dp">
+
+            <ImageView
+                android:id="@+id/ivproflieview1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_person"
+                android:scaleType="centerCrop"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvphoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Add Profile Photo"
+            android:textColor="#1282a2"
+            android:textSize="12dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            app:startIconDrawable="@drawable/ic_user_id"
+            app:startIconTint="#168aad"
+            android:hint="Name"
+            android:textColorHint="#adb5bd"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            android:layout_below="@id/tvphoto"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/name0"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="#168aad"
+            android:hint="Gmail Id"
+            android:textColorHint="#adb5bd"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/expertise01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/email0"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic__hospital_24"
+            app:startIconTint="#168aad"
+            android:hint="Expertise"
+            android:textColorHint="#adb5bd"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expertise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/expertise01"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_off"
+            app:startIconTint="#168aad"
+            android:hint="Address"
+            android:textColorHint="#adb5bd"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/worktime01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/address01"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_time"
+            app:startIconTint="#168aad"
+            android:hint="Work Time"
+            android:textColorHint="#adb5bd"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/worktime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/worktime01"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_password_lock"
+            app:startIconTint="#168aad"
+            android:hint="Password"
+            android:textColorHint="#adb5bd"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#168aad"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmpassword0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/password0"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_password_lock"
+            app:startIconTint="#168aad"
+            android:hint="Confirm Password"
+            android:textColorHint="#adb5bd"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#168aad"
+            app:boxStrokeColor="#1282a2"
+            app:hintTextColor="#1282a2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btndocadd"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirmpassword0"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#168aad"
+            android:text="ADD DOCTOR"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

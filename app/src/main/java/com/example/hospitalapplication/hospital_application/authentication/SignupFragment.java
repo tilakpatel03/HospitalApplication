@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application;
+package com.example.hospitalapplication.hospital_application.authentication;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.FragmentSignupBinding;
+import com.example.hospitalapplication.hospital_application.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -104,14 +105,14 @@ public class SignupFragment extends Fragment {
                                                 }).addOnFailureListener(new OnFailureListener() {
                                                     @Override
                                                     public void onFailure(@NonNull Exception e) {
-                                                        Log.i("Myerror",e.toString());
+                                                        Log.i("Myerrors",e.toString());
                                                     }
                                                 });
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Log.i("Myerror",e.toString());
+                                                Log.i("Myerrors",e.toString());
                                             }
                                         });
                                     }
@@ -119,14 +120,14 @@ public class SignupFragment extends Fragment {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(getActivity(), "Add Profile Photo", Toast.LENGTH_SHORT).show();
-                                        Log.i("Myerror",e.toString());
+                                        Log.i("Myerrors",e.toString());
                                     }
                                 });
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.i("Myerror",e.toString());
+                                Log.i("Myerrors",e.toString());
                             }
                         });
 

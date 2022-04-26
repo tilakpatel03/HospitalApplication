@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".hospital_application.LoginFragment"
+    tools:context=".hospital_application.authentication.LoginFragment"
     android:background="#ffffff"
-    android:padding="30dp">
+    android:padding="20dp">
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/IV2"
@@ -29,8 +29,7 @@
         android:id="@+id/ETlogin01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/IV1"
+        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         app:startIconDrawable="@drawable/ic_user_id"
         app:startIconTint="#168aad"
@@ -79,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnforgotpassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#168aad"
         android:text=" Log in"
         android:textColor="@color/white"

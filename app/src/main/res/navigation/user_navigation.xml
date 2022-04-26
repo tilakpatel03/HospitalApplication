@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.hospitalapplication.hospital_application.MainFragment"
+        android:name="com.example.hospitalapplication.hospital_application.authentication.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.hospitalapplication.hospital_application.LoginFragment"
+        android:name="com.example.hospitalapplication.hospital_application.authentication.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.hospitalapplication.hospital_application.SignupFragment"
+        android:name="com.example.hospitalapplication.hospital_application.authentication.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.hospitalapplication.hospital_application.ForgotPasswordFragment"
+        android:name="com.example.hospitalapplication.hospital_application.authentication.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -63,12 +63,12 @@
         tools:layout="@layout/activity_dashboard" />
     <activity
         android:id="@+id/adminActivity"
-        android:name="com.example.hospitalapplication.hospital_application.AdminActivity"
+        android:name="com.example.hospitalapplication.hospital_application.admin.AdminActivity"
         android:label="activity_admin"
         tools:layout="@layout/activity_admin" />
     <fragment
         android:id="@+id/adminDoctorFragment2"
-        android:name="com.example.hospitalapplication.hospital_application.AdminDoctorFragment"
+        android:name="com.example.hospitalapplication.hospital_application.admin.doctor.AdminDoctorFragment"
         android:label="fragment_admin_doctor"
         tools:layout="@layout/fragment_admin_doctor" />
 </navigation>

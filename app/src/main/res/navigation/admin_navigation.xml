@@ -7,46 +7,49 @@
 
     <fragment
         android:id="@+id/adminDoctorFragment"
-        android:name="com.example.hospitalapplication.hospital_application.AdminDoctorFragment"
+        android:name="com.example.hospitalapplication.hospital_application.admin.doctor.AdminDoctorFragment"
         android:label="fragment_admin_doctor"
         tools:layout="@layout/fragment_admin_doctor" >
         <action
             android:id="@+id/action_adminDoctorFragment_to_adminAppointmentFragment"
             app:destination="@id/adminAppointmentFragment" />
         <action
-            android:id="@+id/action_adminDoctorFragment_to_adminTestReportFragment"
-            app:destination="@id/adminTestReportFragment" />
-        <action
             android:id="@+id/action_adminDoctorFragment_to_adminTestrpFragment"
             app:destination="@id/adminTestrpFragment" />
+        <action
+            android:id="@+id/action_adminDoctorFragment_to_add_doctor_dailogFragment"
+            app:destination="@id/add_doctor_dailogFragment" />
     </fragment>
     <fragment
         android:id="@+id/adminAppointmentFragment"
-        android:name="com.example.hospitalapplication.hospital_application.AdminAppointmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.admin.AdminAppointmentFragment"
         android:label="fragment_admin_appointment"
         tools:layout="@layout/fragment_admin_appointment" >
         <action
             android:id="@+id/action_adminAppointmentFragment_to_adminDoctorFragment"
             app:destination="@id/adminDoctorFragment" />
         <action
-            android:id="@+id/action_adminAppointmentFragment_to_adminTestReportFragment"
-            app:destination="@id/adminTestReportFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/adminTestReportFragment"
-        android:name="com.example.hospitalapplication.hospital_application.AdminTestReportFragment"
-        android:label="fragment_admin_test_report"
-        tools:layout="@layout/fragment_admin_test_report" >
-        <action
-            android:id="@+id/action_adminTestReportFragment_to_adminDoctorFragment"
-            app:destination="@id/adminDoctorFragment" />
-        <action
-            android:id="@+id/action_adminTestReportFragment_to_adminAppointmentFragment"
-            app:destination="@id/adminAppointmentFragment" />
+            android:id="@+id/action_adminAppointmentFragment_to_adminTestrpFragment"
+            app:destination="@id/adminTestrpFragment" />
     </fragment>
     <fragment
         android:id="@+id/adminTestrpFragment"
-        android:name="com.example.hospitalapplication.hospital_application.AdminTestrpFragment"
+        android:name="com.example.hospitalapplication.hospital_application.admin.test.AdminTestrpFragment"
         android:label="fragment_admin_testrp"
-        tools:layout="@layout/fragment_admin_testrp" />
+        tools:layout="@layout/fragment_admin_testrp" >
+        <action
+            android:id="@+id/action_adminTestrpFragment_to_adminDoctorFragment"
+            app:destination="@id/adminDoctorFragment" />
+        <action
+            android:id="@+id/action_adminTestrpFragment_to_adminAppointmentFragment"
+            app:destination="@id/adminAppointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_doctor_dailogFragment"
+        android:name="com.example.hospitalapplication.hospital_application.admin.doctor.add_doctor_dailogFragment"
+        android:label="add_doctor_dailogFragment" >
+        <action
+            android:id="@+id/action_add_doctor_dailogFragment_to_adminDoctorFragment"
+            app:destination="@id/adminDoctorFragment" />
+    </fragment>
 </navigation>
