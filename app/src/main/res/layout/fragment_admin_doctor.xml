@@ -35,5 +35,20 @@
 
 <!--    </androidx.cardview.widget.CardView>-->
 
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/card"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        app:cardCornerRadius="20dp">-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/rvdoc">-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
 
 </RelativeLayout>

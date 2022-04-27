@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.AddDoctorDailogBinding;
 import com.example.hospitalapplication.databinding.FragmentAdminDoctorBinding;
+import com.example.hospitalapplication.hospital_application.AdminDoctorAdapter;
 import com.example.hospitalapplication.hospital_application.Doctor;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,13 +69,13 @@ public class AdminDoctorFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("Doctor");
 
+
         list = new ArrayList<>();
         keyList = new ArrayList<>();
 
         ArrayAdapter<Doctor> adapter = new ArrayAdapter<>(getActivity(), R.layout.fragment_add_doctor_details,list);
 
         binding.listdoc.setAdapter(adapter);
-
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override

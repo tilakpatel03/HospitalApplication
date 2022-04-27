@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".hospital_application.DashboardActivity"
     android:id="@+id/Drawer"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    >
 
     <ScrollView
         android:layout_width="match_parent"

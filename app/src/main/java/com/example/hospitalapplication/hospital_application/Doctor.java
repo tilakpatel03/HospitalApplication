@@ -1,6 +1,8 @@
 package com.example.hospitalapplication.hospital_application;
 
-public class Doctor {
+import java.io.Serializable;
+
+public class Doctor implements Serializable {
     String name;
     String email;
     String photoUrl;

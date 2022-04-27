@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.bumptech.glide.Glide;
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.ActivitySeeDocListBinding;
-import com.example.hospitalapplication.databinding.DoctorListRvBinding;
 import com.example.hospitalapplication.hospital_application.authentication.UserActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -22,16 +23,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SeeDocListActivity extends AppCompatActivity {
+public class SeeDocListActivity extends AppCompatActivity implements DoctorUserAdapter.OnAppointmentClickInterface {
     private ActivitySeeDocListBinding binding;
     private DatabaseReference ref;
     private ArrayList<Doctor> list;
     private ArrayList<String> keyList;
     private FirebaseAuth auth;
-    private DoctorListRvBinding binding1;
     private ProgressDialog pd;
+    private View image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +57,11 @@ public class SeeDocListActivity extends AppCompatActivity {
         list= new ArrayList<>();
         keyList = new ArrayList<>();
 
-        DoctorAdapter adapter = new DoctorAdapter(list);
+        DoctorUserAdapter adapter = new DoctorUserAdapter(list,this);
 
         binding.rvdoc.setAdapter(adapter);
 
-        binding1=DoctorListRvBinding.inflate(getLayoutInflater());
-        binding1.getRoot();
+
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,8 +77,6 @@ public class SeeDocListActivity extends AppCompatActivity {
 
                     list.add(d);
                     keyList.add(key);
-
-                    Glide.with(SeeDocListActivity.this).load(d.photoUrl).into(binding1.ivdocphoto);
 
                     pd.dismiss();
                 }
@@ -101,5 +101,13 @@ public class SeeDocListActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onAppointmentClick(int position) {
+        Doctor d = list.get(position);
+        Intent i = new Intent(SeeDocListActivity.this,DoctorDetailsActivity.class);
+        i.putExtra("doc",d);
+        startActivity(i);
     }
 }

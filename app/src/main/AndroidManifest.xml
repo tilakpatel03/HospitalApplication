@@ -12,11 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalApplication">
         <activity
+            android:name=".hospital_application.DoctorDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".hospital_application.doctor_activity.DoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".hospital_application.SeeDocListActivity"
             android:exported="false" />
         <activity
             android:name=".hospital_application.admin.AdminActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".hospital_application.DashboardActivity"
             android:exported="false" />
