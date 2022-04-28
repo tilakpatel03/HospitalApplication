@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/tvdoc"
@@ -25,7 +26,7 @@
             android:id="@+id/ivp"
             android:layout_below="@+id/tvdoc"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             app:cardCornerRadius="100dp"
             app:cardElevation="10dp">
 
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dornametv"
             android:layout_below="@id/ivp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             android:hint="Doctor Name"
             android:gravity="center"
             android:textSize="25dp"/>
@@ -58,12 +59,14 @@
             android:gravity="center"
             android:textSize="20dp"/>
 
+
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/patientname0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             app:startIconDrawable="@drawable/ic_user_id"
             app:startIconTint="#168aad"
             android:hint="Patient Name"
@@ -85,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             app:startIconDrawable="@drawable/ic_medical_services"
             app:startIconTint="#168aad"
             android:hint="Patient Diagnosis"
@@ -107,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             app:startIconDrawable="@drawable/ic_description"
             app:startIconTint="#168aad"
             android:hint="Diagnosis Description"
@@ -125,17 +128,50 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnbookadd"
-            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:id="@+id/btndate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Diagnosisdescription0"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:text="Select Date"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18dp"
+            android:textColor="#168aad"
+            app:iconTint="#168aad"
+            android:layout_below="@id/btntime"
+            app:strokeColor="#168aad"
+            app:strokeWidth="2dp"
+            app:icon="@drawable/ic_add"/>
+
+        <Button
+            android:id="@+id/btntime"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Diagnosisdescription0"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="Select Time"
+            android:textSize="18dp"
+            app:strokeColor="#168aad"
+            android:textColor="#168aad"
+            app:iconTint="#168aad"
+            app:strokeWidth="2dp"
+            app:icon="@drawable/ic_add"/>
+
+        <Button
+            android:id="@+id/btnbookadd"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/btndate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#168aad"
             android:text="Book Appointment"
             android:textColor="@color/white"
             android:gravity="center"
+            android:textAllCaps="true"
             android:textSize="20dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -145,10 +181,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnbookadd"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:text="Cancel"
+            android:textSize="15dp"
             android:textAllCaps="false"/>
 
     </RelativeLayout>
-
 </ScrollView>
