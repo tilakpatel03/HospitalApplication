@@ -1,4 +1,4 @@
-package com.example.hospitalapplication.hospital_application.admin;
+package com.example.hospitalapplication.hospital_application.doctor_activity;
 
 import android.os.Bundle;
 
@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.hospitalapplication.R;
-import com.example.hospitalapplication.databinding.FragmentAdminAppointmentBinding;
+import com.example.hospitalapplication.databinding.FragmentDoctorAcceptAppointmentBinding;
 import com.example.hospitalapplication.hospital_application.Appointment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,8 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AdminAppointmentFragment extends Fragment {
-    private FragmentAdminAppointmentBinding binding;
+public class DoctorAcceptAppointmentFragment extends Fragment {
+    private FragmentDoctorAcceptAppointmentBinding binding;
     private DatabaseReference ref;
     private FirebaseAuth auth;
     private ArrayList<Appointment> list;
@@ -34,7 +34,8 @@ public class AdminAppointmentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAdminAppointmentBinding.inflate(getLayoutInflater());
+        binding = FragmentDoctorAcceptAppointmentBinding.inflate(getLayoutInflater());
+        // Inflate the layout for this fragment
         return binding.getRoot();
     }
 
@@ -47,7 +48,7 @@ public class AdminAppointmentFragment extends Fragment {
         ArrayAdapter<Appointment> adapter = new ArrayAdapter<>(getActivity(), R.layout.fragment_add_doctor_details,list);
 
 
-        binding.listForAllAppointment.setAdapter(adapter);
+        binding.listForAccAppointment.setAdapter(adapter);
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("appointment");
 
@@ -60,11 +61,13 @@ public class AdminAppointmentFragment extends Fragment {
 
                     Appointment appointment = childSnap.getValue(Appointment.class);
 
-                    list.add(appointment);
+                    if(auth.getCurrentUser().getUid().equals(appointment.getDoctorID()) && appointment.getStatus().equals("approved")){
 
+                        list.add(appointment);
+
+                    }
                     keys.add(childSnap.getKey());
                 }
-
                 adapter.notifyDataSetChanged();
 
             }
@@ -74,9 +77,10 @@ public class AdminAppointmentFragment extends Fragment {
                 // log lelo
             }
         });
-        binding.listForAllAppointment.setOnItemClickListener((adapterView, view1, i, l) -> {
+        binding.listForAccAppointment.setOnItemClickListener((adapterView, view1, i, l) -> {
 
             String key = keys.get(i);
+
             new AlertDialog.Builder(getActivity())
                     .setTitle("Delete this appointment ?")
                     .setCancelable(false)
@@ -94,5 +98,6 @@ public class AdminAppointmentFragment extends Fragment {
                 dialogInterface.dismiss();
             }).create().show();
         });
+
     }
 }

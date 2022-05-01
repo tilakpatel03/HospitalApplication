@@ -11,7 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
 <!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
-        <item name="android:statusBarColor">#136795</item>
+        <item name="android:statusBarColor">#56769C</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -22,6 +22,11 @@
         <item name="android:paddingRight">12dp</item>
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">25dp</item>
+        <item name="fontFamily">@font/breeserif_regular</item>
     </style>
 
 

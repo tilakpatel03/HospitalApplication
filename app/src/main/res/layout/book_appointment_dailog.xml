@@ -129,19 +129,19 @@
 
         <Button
             android:id="@+id/btndate"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:text="Select Date"
+            android:layout_below="@id/btntime"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:textSize="18dp"
+            android:text="Select Date"
             android:textColor="#168aad"
+            android:textSize="18dp"
+            app:icon="@drawable/ic_add"
             app:iconTint="#168aad"
-            android:layout_below="@id/btntime"
             app:strokeColor="#168aad"
-            app:strokeWidth="2dp"
-            app:icon="@drawable/ic_add"/>
+            app:strokeWidth="2dp" />
 
         <Button
             android:id="@+id/btntime"
@@ -149,15 +149,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Diagnosisdescription0"
-            android:layout_marginTop="8dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
             android:text="Select Time"
-            android:textSize="18dp"
-            app:strokeColor="#168aad"
             android:textColor="#168aad"
+            android:textSize="18dp"
+            app:icon="@drawable/ic_add"
             app:iconTint="#168aad"
-            app:strokeWidth="2dp"
-            app:icon="@drawable/ic_add"/>
+            app:strokeColor="#168aad"
+            app:strokeWidth="2dp" />
 
         <Button
             android:id="@+id/btnbookadd"

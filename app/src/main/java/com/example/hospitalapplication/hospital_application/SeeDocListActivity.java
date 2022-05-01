@@ -3,6 +3,7 @@ package com.example.hospitalapplication.hospital_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
@@ -52,6 +53,19 @@ public class SeeDocListActivity extends AppCompatActivity implements DoctorUserA
 
         ref = FirebaseDatabase.getInstance().getReference("Doctor");
 
+//        binding.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                switch (item.getItemId()){
+//                    case R.id.back:
+//                        Intent i = new Intent(SeeDocListActivity.this,DashboardActivity.class);
+//                        startActivity(i);
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
+
         binding.rvdoc.setLayoutManager(new LinearLayoutManager(this));
 
         list= new ArrayList<>();
@@ -88,7 +102,7 @@ public class SeeDocListActivity extends AppCompatActivity implements DoctorUserA
 
             }
         });
-        binding.toolbardashboard.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        binding.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 

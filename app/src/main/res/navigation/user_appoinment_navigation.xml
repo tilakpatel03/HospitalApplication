@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_appoinment_navigation"
+    app:startDestination="@id/userPendingAppoinmentFragment">
+    <fragment
+        android:id="@+id/userPendingAppoinmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.userAppoinment.UserPendingAppoinmentFragment"
+        android:label="fragment_user_pending_appointment"
+        tools:layout="@layout/fragment_user_pending_appointment" >
+        <action
+            android:id="@+id/action_userPendingAppoinmentFragment_to_userRejectAppoinmentFragment"
+            app:destination="@id/userRejectAppoinmentFragment" />
+        <action
+            android:id="@+id/action_userPendingAppoinmentFragment_to_userAcceptAppoimtmentFragment"
+            app:destination="@id/userAcceptAppoimtmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAcceptAppoimtmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.userAppoinment.UserAcceptAppointmentFragment"
+        android:label="fragment_user_accept_appoimtment"
+        tools:layout="@layout/fragment_user_accept_appoimtment" >
+        <action
+            android:id="@+id/action_userAcceptAppoimtmentFragment_to_userRejectAppoinmentFragment"
+            app:destination="@id/userRejectAppoinmentFragment" />
+        <action
+            android:id="@+id/action_userAcceptAppoimtmentFragment_to_userPendingAppoinmentFragment"
+            app:destination="@id/userPendingAppoinmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userRejectAppoinmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.userAppoinment.UserRejectAppointmentFragment"
+        android:label="fragment_user_reject_appoinment"
+        tools:layout="@layout/fragment_user_reject_appoinment" >
+        <action
+            android:id="@+id/action_userRejectAppoinmentFragment_to_userAcceptAppoimtmentFragment"
+            app:destination="@id/userAcceptAppoimtmentFragment" />
+        <action
+            android:id="@+id/action_userRejectAppoinmentFragment_to_userPendingAppoinmentFragment"
+            app:destination="@id/userPendingAppoinmentFragment" />
+    </fragment>
+</navigation>

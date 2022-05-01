@@ -1,5 +1,6 @@
-package com.example.hospitalapplication.hospital_application.admin;
+package com.example.hospitalapplication.hospital_application.userAppoinment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,11 +11,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.hospitalapplication.R;
-import com.example.hospitalapplication.databinding.FragmentAdminAppointmentBinding;
+import com.example.hospitalapplication.databinding.FragmentUserAcceptAppoimtmentBinding;
 import com.example.hospitalapplication.hospital_application.Appointment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,8 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AdminAppointmentFragment extends Fragment {
-    private FragmentAdminAppointmentBinding binding;
+public class UserAcceptAppointmentFragment extends Fragment {
+    private FragmentUserAcceptAppoimtmentBinding binding;
     private DatabaseReference ref;
     private FirebaseAuth auth;
     private ArrayList<Appointment> list;
@@ -34,20 +36,20 @@ public class AdminAppointmentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAdminAppointmentBinding.inflate(getLayoutInflater());
+        binding = FragmentUserAcceptAppoimtmentBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         list = new ArrayList<>();
         keys = new ArrayList<>();
 
         ArrayAdapter<Appointment> adapter = new ArrayAdapter<>(getActivity(), R.layout.fragment_add_doctor_details,list);
 
 
-        binding.listForAllAppointment.setAdapter(adapter);
+        binding.listViewUserAppointmentacc.setAdapter(adapter);
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("appointment");
 
@@ -60,11 +62,13 @@ public class AdminAppointmentFragment extends Fragment {
 
                     Appointment appointment = childSnap.getValue(Appointment.class);
 
-                    list.add(appointment);
+                    if(auth.getCurrentUser().getUid().equals(appointment.getPatientId()) && appointment.getStatus().equals("approved")){
 
+                        list.add(appointment);
+
+                    }
                     keys.add(childSnap.getKey());
                 }
-
                 adapter.notifyDataSetChanged();
 
             }
@@ -74,7 +78,7 @@ public class AdminAppointmentFragment extends Fragment {
                 // log lelo
             }
         });
-        binding.listForAllAppointment.setOnItemClickListener((adapterView, view1, i, l) -> {
+        binding.listViewUserAppointmentacc.setOnItemClickListener((adapterView, view1, i, l) -> {
 
             String key = keys.get(i);
             new AlertDialog.Builder(getActivity())
@@ -93,6 +97,23 @@ public class AdminAppointmentFragment extends Fragment {
                     }).setNegativeButton("cancel",(dialogInterface, i1) -> {
                 dialogInterface.dismiss();
             }).create().show();
+
         });
+
     }
 }
+
+
+//        new AlertDialog.Builder(getActivity())
+//        .setTitle("Delete this appointment ?")
+//        .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+//@Override
+//public void onClick(DialogInterface dialogInterface, int i) {
+//
+//        }
+//        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+//@Override
+//public void onClick(DialogInterface dialogInterface, int i) {
+//
+//        }
+//        }).create().show();

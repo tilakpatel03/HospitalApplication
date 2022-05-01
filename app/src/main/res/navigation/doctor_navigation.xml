@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/doctor_navigation"
+    app:startDestination="@id/doctorAllAppointmentFragment">
+    <fragment
+        android:id="@+id/doctorAllAppointmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.doctor_activity.DoctorAllAppointmentFragment"
+        android:label="fragment_doctor_all_appointment"
+        tools:layout="@layout/fragment_doctor_all_appointment" >
+        <action
+            android:id="@+id/action_doctorAllAppointmentFragment_to_doctorAcceptAppointmentFragment"
+            app:destination="@id/doctorAcceptAppointmentFragment" />
+        <action
+            android:id="@+id/action_doctorAllAppointmentFragment_to_doctorRejectAppointmentFragment"
+            app:destination="@id/doctorRejectAppointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorAcceptAppointmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.doctor_activity.DoctorAcceptAppointmentFragment"
+        android:label="fragment_doctor_accept_appointment"
+        tools:layout="@layout/fragment_doctor_accept_appointment" >
+        <action
+            android:id="@+id/action_doctorAcceptAppointmentFragment_to_doctorRejectAppointmentFragment"
+            app:destination="@id/doctorRejectAppointmentFragment" />
+        <action
+            android:id="@+id/action_doctorAcceptAppointmentFragment_to_doctorAllAppointmentFragment"
+            app:destination="@id/doctorAllAppointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorRejectAppointmentFragment"
+        android:name="com.example.hospitalapplication.hospital_application.doctor_activity.DoctorRejectAppointmentFragment"
+        android:label="fragment_doctor_reject_appointment"
+        tools:layout="@layout/fragment_doctor_reject_appointment" >
+        <action
+            android:id="@+id/action_doctorRejectAppointmentFragment_to_doctorAllAppointmentFragment"
+            app:destination="@id/doctorAllAppointmentFragment" />
+        <action
+            android:id="@+id/action_doctorRejectAppointmentFragment_to_doctorAcceptAppointmentFragment"
+            app:destination="@id/doctorAcceptAppointmentFragment" />
+    </fragment>
+</navigation>

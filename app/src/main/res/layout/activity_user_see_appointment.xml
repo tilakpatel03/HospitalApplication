@@ -4,36 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".hospital_application.doctor_activity.DoctorActivity">
+    tools:context=".hospital_application.userAppoinment.UserSeeAppointmentActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        app:title="The Health Care (Doctor)"
+        app:title="@string/app_name"
         app:titleTextColor="@color/black"
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleCentered="true"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
         android:background="@drawable/toolbarwallpaper"
-        app:menu="@menu/right_menu"/>
+        app:menu="@menu/right_menu" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fcvdoctor"
+        android:id="@+id/fcvuser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         android:layout_below="@id/toolbar"
-        android:layout_above="@id/bnvdoctor"
-        app:navGraph="@navigation/doctor_navigation"/>
+        android:layout_above="@id/bnvuser"
+        app:navGraph="@navigation/user_appoinment_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnvuser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bnvdoctor"
         android:layout_alignParentBottom="true"
         android:background="#BCCBDD"
-        app:menu="@menu/doctor_bottom"/>
+        app:menu="@menu/user_appoinment_bottom" />
 
 </RelativeLayout>
+
+
+
+
+

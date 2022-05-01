@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/docPending"
+        android:title="Pending"
+        android:icon="@drawable/ic_pending"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/docAccept"
+        android:title="Accept"
+        android:icon="@drawable/ic_accept"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/docReject"
+        android:title="Reject"
+        android:icon="@drawable/ic_cancel"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        android:enabled="true"/>
+</menu>

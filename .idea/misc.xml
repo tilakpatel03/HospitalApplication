@@ -4,21 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/drawable/ic_password_lock.xml" value="0.1635" />
-        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar.xml" value="0.25" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar.xml" value="0.22" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar_admin.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar_dashbord.xml" value="0.25" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar_maim.xml" value="0.25" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/actionbar_main.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_admin.xml" value="0.25" />
-        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_doctor.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_doctor_details.xml" value="0.2735294117647059" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_doctor_details.xml" value="0.2" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_see_doc_list.xml" value="0.15" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_see_doc_list.xml" value="0.18" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_user.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_user_see_appointment.xml" value="0.2" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/activity_user_see_appointment_old.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/add_doctor_dailog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/admin_doctor_list_rv.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/book_appointment_dailog.xml" value="0.2556131260794473" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/doctor_actionbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/doctor_list_rv.xml" value="0.42196531791907516" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/doctor_list_rv_user.xml" value="0.2719298245614035" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_add_doctor_dailog.xml" value="0.20416666666666666" />
@@ -28,17 +32,30 @@
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_admin_doctor.xml" value="0.1" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_admin_test_report.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_admin_testrp.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_doctor_accept_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_doctor_all_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_doctor_reject_appointment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_forgot_password.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_signup.xml" value="0.33" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_user_accept_appoimtment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_user_panding_appoinment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_user_pending_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/fragment_user_reject_appoinment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/hedar_up.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/time_zone_appor.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/time_zone_s.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/layout/user_actionbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/admin_bottom.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/back.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/backpass.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/bottom.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/deshbord_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/doctor_bottom.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/right_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tilak/AndroidStudioProjects/HospitalApplication/app/src/main/res/menu/user_appoinment_bottom.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

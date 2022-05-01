@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.ActivityDashboardBinding;
 import com.example.hospitalapplication.hospital_application.authentication.UserActivity;
+import com.example.hospitalapplication.hospital_application.userAppoinment.UserSeeAppointmentActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,12 +46,37 @@ public class DashboardActivity extends AppCompatActivity {
         pd.setMessage("Please Wait");
         pd.show();
 
-        binding.toolbardashboard.toolbar.setNavigationOnClickListener(view -> {
-            binding.Drawer.openDrawer(Gravity.LEFT);
-        });
-
         ref = FirebaseDatabase.getInstance().getReference("User");
         auth = FirebaseAuth.getInstance();
+
+        binding.toolbar.setNavigationOnClickListener(view -> {
+            binding.Drawer.openDrawer(Gravity.LEFT);
+        });
+        binding.drawer.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.Appointments:
+                    Intent i = new Intent(DashboardActivity.this, UserSeeAppointmentActivity.class);
+                    startActivity(i);
+                    break;
+                case R.id.getappointments:
+                    Toast.makeText(this, "getappointments", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.doctor:
+                    Intent i1 = new Intent(DashboardActivity.this,SeeDocListActivity.class);
+                    startActivity(i1);
+                    break;
+                case R.id.testreport:
+                    Toast.makeText(this, "testreport", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.help:
+                    Toast.makeText(this, "help", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.setting:
+                    Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            return false;
+        });
 
         String userId = auth.getCurrentUser().getUid();
 
@@ -65,7 +91,6 @@ public class DashboardActivity extends AppCompatActivity {
                     TextView name =view.findViewById(R.id.nameTV);
                     TextView email = view.findViewById(R.id.emailTV);
                     ImageView imageView = view.findViewById(R.id.ivproflie);
-
 
                     if (user.uid.equals(userId)){
 
@@ -88,7 +113,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        binding.toolbardashboard.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        binding.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 

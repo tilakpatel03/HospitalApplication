@@ -1,7 +1,9 @@
 package com.example.hospitalapplication.hospital_application;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -11,12 +13,18 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.hospitalapplication.R;
 import com.example.hospitalapplication.databinding.ActivityDoctorDetailsBinding;
 import com.example.hospitalapplication.databinding.BookAppointmentDailogBinding;
 import com.example.hospitalapplication.databinding.TimeZoneSBinding;
+import com.example.hospitalapplication.hospital_application.authentication.UserActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,9 +41,10 @@ public class DoctorDetailsActivity extends AppCompatActivity {
     private TimeZoneSBinding binding2;
     private FirebaseAuth auth;
     private DatabaseReference ref;
-    private StorageReference storeref;
     private Doctor d;
+    private Dialog dialog;
     private Dialog dialog2;
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +53,11 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
-        auth = FirebaseAuth.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference("appointment").child(d.uid);
-
         Intent intent =getIntent();
         d = (Doctor) intent.getSerializableExtra("doc");
+
+        auth = FirebaseAuth.getInstance();
+        ref = FirebaseDatabase.getInstance().getReference("appointment");
 
         binding.tvnamedoc.setText(d.name);
         binding.tvexpdoc.setText(d.expertise);
@@ -58,6 +67,8 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         Glide.with(DoctorDetailsActivity.this)
                 .load(d.photoUrl).into(binding.ivdocp);
 
+
+
         binding.btnbook.setOnClickListener(view -> {
             binding1 = BookAppointmentDailogBinding.inflate(getLayoutInflater());
 
@@ -66,6 +77,14 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             binding1.exptv.setText(d.expertise);
             Glide.with(DoctorDetailsActivity.this)
                     .load(d.photoUrl).into(binding1.ivproflieview1);
+
+//            binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//
+//                }
+//            });
 
             binding1.btntime.setOnClickListener(view1 -> {
                 binding2 = TimeZoneSBinding.inflate(getLayoutInflater());
@@ -165,6 +184,17 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 dialog.show();
 
             });
+            binding1.btncen.setOnClickListener(view1 -> {
+                new AlertDialog.Builder(this)
+                        .setTitle("Are you sure cancel?")
+                        .setCancelable(false)
+                        .setPositiveButton("Done",(dialogInterface, i) -> {
+                            dialog.dismiss();
+                        }).setNegativeButton("cancel",(dialogInterface, i) -> {
+                            dialogInterface.dismiss();
+                }).create().show();
+
+            });
 
             binding1.btnbookadd.setOnClickListener(view1 -> {
                 String patientname = binding1.patientname.getText().toString();
@@ -173,14 +203,59 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 String time = binding1.btntime.getText().toString();
                 String date = binding1.btndate.getText().toString();
 
+                Appointment appointment = new Appointment(patientname,patientDiagnosis,diagnosisdescription
+                        ,time,date,"request",auth.getCurrentUser().getUid(),d.uid);
 
+                if (!patientname.isEmpty() && !patientDiagnosis.isEmpty() && !diagnosisdescription.isEmpty()){
 
+                    if (!time.equals("Select Time")){
+
+                        if (!date.equals("Select Date")){
+                            ref.push().setValue(appointment).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    dialog.dismiss();
+                                    Toast.makeText(DoctorDetailsActivity.this, "Wait for Doctor Response", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    dialog.dismiss();
+                                    Toast.makeText(DoctorDetailsActivity.this, "Doctor is Busy", Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+                        }else {
+                            Toast.makeText(this, "Input Date", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        Toast.makeText(this, "Input Time", Toast.LENGTH_SHORT).show();
+                    }
+
+                }else {
+                    binding1.patientname.setError("Fill the name");
+                    binding1.patientDiagnosis.setError("Fill the diagnosis");
+                    binding1.Diagnosisdescription.setError("Fill the diagnosis description");
+                }
             });
-            Dialog dialog = new Dialog(DoctorDetailsActivity.this, android.R.style.Theme_Light);
+            dialog = new Dialog(DoctorDetailsActivity.this, android.R.style.Theme_Light);
             dialog.setContentView(binding1.getRoot());
             dialog.show();
 
         });
+        binding.toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
 
+                switch (item.getItemId()){
+                    case R.id.signout:
+                        auth.signOut();
+                        startActivity(new Intent(DoctorDetailsActivity.this, UserActivity.class));
+                        break;
+                }
+                return false;
+            }
+        });
     }
 }

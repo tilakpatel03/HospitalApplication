@@ -16,7 +16,7 @@
         android:layout_marginRight="20dp"
         android:text="Add Dotcor"
         app:icon="@drawable/ic_add"
-        android:backgroundTint="#90e0ef"/>
+        android:backgroundTint="#BCCBDD"/>
 
     <ListView
         android:layout_width="match_parent"

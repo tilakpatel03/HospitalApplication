@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:titleCentered="true"
+        android:layout_height="125dp"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/black"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        app:navigationIcon="@drawable/icon_menu_24"
+        app:navigationIconTint="@color/white"
+        android:background="@drawable/toolbarwallpaper"
+        app:menu="@menu/right_menu"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/topappbar_user"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:title="@string/app_name"-->
+<!--            app:collapsedTitleTextColor="@color/black"-->
+<!--            app:expandedTitleTextColor="@color/black"-->
+
+<!--            app:collapsedTitleGravity="start"-->
+<!--            app:expandedTitleGravity="center"-->
+<!--            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="220dp"-->
+<!--                android:src="@drawable/toolbarwallpaper"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:layout_collapseMode="parallax"/>-->
+
+<!--            <com.google.android.material.appbar.MaterialToolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                app:titleTextColor="@color/white"-->
+<!--                app:navigationIcon="@drawable/icon_menu_24"-->
+<!--                app:menu="@menu/right_menu" />-->
+
+<!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

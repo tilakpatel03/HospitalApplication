@@ -2,25 +2,29 @@ package com.example.hospitalapplication.hospital_application;
 
 import java.io.Serializable;
 
-public class Book_Appointment implements Serializable {
+public class Appointment implements Serializable {
     String patientname;
     String patientDiagnosis;
     String diagnosisdescription;
     String time;
     String date;
-    Boolean accept = false;
+    String status;
+    String PatientId;
+    String doctorID;
 
-    Book_Appointment(){
+    Appointment(){
 
     }
 
-    public Book_Appointment(String patientname, String patientDiagnosis, String diagnosisdescription, String time, String date, Boolean accept) {
+    public Appointment(String patientname, String patientDiagnosis, String diagnosisdescription, String time, String date, String status, String patientId, String doctorID) {
         this.patientname = patientname;
         this.patientDiagnosis = patientDiagnosis;
         this.diagnosisdescription = diagnosisdescription;
         this.time = time;
         this.date = date;
-        this.accept = accept;
+        this.status = status;
+        PatientId = patientId;
+        this.doctorID = doctorID;
     }
 
     public String getPatientname() {
@@ -63,11 +67,38 @@ public class Book_Appointment implements Serializable {
         this.date = date;
     }
 
-    public Boolean getAccept() {
-        return accept;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAccept(Boolean accept) {
-        this.accept = accept;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPatientId() {
+        return PatientId;
+    }
+
+    public void setPatientId(String patientId) {
+        PatientId = patientId;
+    }
+
+    public String getDoctorID() {
+        return doctorID;
+    }
+
+    public void setDoctorID(String doctorID) {
+        this.doctorID = doctorID;
+    }
+
+    @Override
+    public String toString() {
+        return "Appointment" +
+                "\n"+
+                "\nPatient Name             ='" + patientname +
+                "\npatient Diagnosis        ='" + patientDiagnosis +
+                "\nDiagnosis Description='" + diagnosisdescription +
+                "\nTime                     ='" + time +
+                "\nDate                     ='" + date;
     }
 }

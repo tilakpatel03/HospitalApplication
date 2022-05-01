@@ -15,6 +15,6 @@
         android:layout_marginRight="20dp"
         android:text="Add Report"
         app:icon="@drawable/icon_testreport"
-        android:backgroundTint="#90e0ef"/>
+        android:backgroundTint="#BCCBDD"/>
 
 </RelativeLayout>

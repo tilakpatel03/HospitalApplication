@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/rl"
             android:padding="10dp"
-            android:background="#CBEAEF">
+            android:background="#BCCBDD">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="125dp"
