@@ -56,17 +56,13 @@ public class LoginFragment extends Fragment {
             startActivity(new Intent(getActivity(), DashboardActivity.class));
             getActivity().finish();
         }
-
         binding.btnsignup.setOnClickListener(view1 -> {
             Navigation.findNavController(getView()).navigate(R.id.action_loginFragment_to_signupFragment);
         });
         binding.btnforgotpassword.setOnClickListener(view1 -> {
             Navigation.findNavController(getView()).navigate(R.id.action_loginFragment_to_forgotPasswordFragment);
         });
-
         user = auth.getCurrentUser();
-
-
         binding.btnlogin.setOnClickListener(view1 -> {
 
             String email = binding.ETlogin.getText().toString().trim();
@@ -76,9 +72,7 @@ public class LoginFragment extends Fragment {
 
                 Intent i = new Intent(getActivity(), AdminActivity.class);
                 startActivity(i);
-
             }
-
             if (!email.isEmpty() && !password.isEmpty()){
                 auth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
@@ -92,11 +86,7 @@ public class LoginFragment extends Fragment {
                                 for(DataSnapshot childSnap : snapshot.getChildren()){
 
                                     Doctor d = childSnap.getValue(Doctor.class);
-
-
                                     if(auth.getCurrentUser().getUid().equals(d.getUid())) {
-
-                                        // Doctor Activity
                                         bool = true;
                                         break;
 

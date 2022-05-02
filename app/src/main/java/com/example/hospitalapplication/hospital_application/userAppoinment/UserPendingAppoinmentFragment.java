@@ -96,7 +96,6 @@ public class UserPendingAppoinmentFragment extends Fragment {
                     }).setNegativeButton("cancel",(dialogInterface, i1) -> {
                 dialogInterface.dismiss();
             }).create().show();
-
         });
 
     }

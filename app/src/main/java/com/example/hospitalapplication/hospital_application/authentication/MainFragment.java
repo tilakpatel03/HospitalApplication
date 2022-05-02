@@ -17,7 +17,7 @@ import com.example.hospitalapplication.databinding.FragmentMainBinding;
 public class MainFragment extends Fragment {
 private FragmentMainBinding binding;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(getLayoutInflater());
         return binding.getRoot();

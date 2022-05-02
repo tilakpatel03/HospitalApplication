@@ -93,20 +93,14 @@ public class DashboardActivity extends AppCompatActivity {
                     ImageView imageView = view.findViewById(R.id.ivproflie);
 
                     if (user.uid.equals(userId)){
-
                         name.setText(user.name);
-
                         email.setText(user.email);
-
                         Glide.with(DashboardActivity.this)
                                 .load(user.imageUrl).into(imageView);
-
                         pd.dismiss();
-
                     }
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
