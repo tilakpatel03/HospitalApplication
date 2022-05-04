@@ -227,8 +227,6 @@ public class AdminDoctorFragment extends Fragment {
 
         binding.listdoc.setOnItemClickListener((adapterView, view1, i, l) -> {
 
-
-
             Doctor d = list.get(i);
             String key = keys.get(i);
 
@@ -258,6 +256,8 @@ public class AdminDoctorFragment extends Fragment {
                                     Doctor doctor = new Doctor(name,email,d.getPhotoUrl(),expertise,address,hour,d.getUid());
 
                                     ref.child(key).setValue(doctor);
+
+                                    adapter.notifyDataSetChanged();
 
 //                                    storageRef = FirebaseStorage.getInstance().getReference("images").child("DoctorImage").child(uid);
 //
@@ -305,12 +305,12 @@ public class AdminDoctorFragment extends Fragment {
                         }).create().show();
 
                     }).setNegativeButton("Delete",(dialogInterface, i1) -> {
-                new AlertDialog.Builder(getActivity())
-                        .setTitle("Are you sure delete a doctor?")
-                        .setCancelable(false)
-                        .setPositiveButton("Delete",(dialogInterface1, i2) -> {
-                            Toast.makeText(getActivity(), "Delete", Toast.LENGTH_SHORT).show();
-                            ref.child(key).removeValue();
+                        new AlertDialog.Builder(getActivity())
+                                .setTitle("Are you sure delete a doctor?")
+                                .setCancelable(false)
+                                .setPositiveButton("Delete",(dialogInterface1, i2) -> {
+                                    Toast.makeText(getActivity(), "Delete", Toast.LENGTH_SHORT).show();
+                                    ref.child(key).removeValue();
                         }).setNegativeButton("Cancel",(dialogInterface1, i2) -> {
                     dialogInterface.dismiss();
                 }).create().show();
