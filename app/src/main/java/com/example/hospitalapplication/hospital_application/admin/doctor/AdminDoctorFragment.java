@@ -54,6 +54,7 @@ public class AdminDoctorFragment extends Fragment {
     private DatabaseReference ref;
     private StorageReference storageRef;
     private ActivityResultLauncher<String> gallery;
+    private ActivityResultLauncher<String> gallery1;
     private Uri uri = null;
     private Uri uri1 = null;
     private String uid;
@@ -108,9 +109,10 @@ public class AdminDoctorFragment extends Fragment {
         gallery = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
             @Override
             public void onActivityResult(Uri result) {
-                uri = result;
-                binding1.ivproflieview1.setImageURI(result);
-
+                if(result!=null){
+                    uri = result;
+                    binding1.ivproflieview1.setImageURI(result);
+                }
             }
         });
 
@@ -151,43 +153,47 @@ public class AdminDoctorFragment extends Fragment {
 
                                 storageRef = FirebaseStorage.getInstance().getReference("images").child("DoctorImage").child(uid);
 
-                                storageRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                    @Override
-                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                if(uri!=null){
 
-                                        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                            @Override
-                                            public void onSuccess(Uri uri) {
+                                    storageRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                                                docId = uri.toString();
+                                            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
 
-                                                Doctor doctor = new Doctor(name,email,docId,expertise,address,hour,uid);
+                                                    docId = uri.toString();
 
-                                                ref.push().setValue(doctor).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                    @Override
-                                                    public void onSuccess(Void unused) {
-                                                        dialog.dismiss();
-                                                    }
-                                                }).addOnFailureListener(new OnFailureListener() {
-                                                    @Override
-                                                    public void onFailure(@NonNull Exception e) {
-                                                        Log.i("Myerror",e.toString());
-                                                    }
-                                                });
-                                            }
-                                        }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.i("Myerror",e.toString());
-                                            }
-                                        });
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.i("Myerror",e.toString());
-                                    }
-                                });
+                                                    Doctor doctor = new Doctor(name,email,docId,expertise,address,hour,uid);
+
+                                                    ref.push().setValue(doctor).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+                                                            dialog.dismiss();
+                                                        }
+                                                    }).addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Log.i("Myerror",e.toString());
+                                                        }
+                                                    });
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.i("Myerror",e.toString());
+                                                }
+                                            });
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.i("Myerror",e.toString());
+                                        }
+                                    });
+
+                                }
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -211,21 +217,21 @@ public class AdminDoctorFragment extends Fragment {
             dialog.show();
             clear();
         });
-        binding2 = UpdateDoctorDailogBinding.inflate(getLayoutInflater());
 
-//        gallery = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
-//            @Override
-//            public void onActivityResult(Uri result) {
-//                uri1 = result;
-//                binding2.ivproflieview1.setImageURI(result);
-//            }
-//        });
-//
-//        binding2.ivproflieview1.setOnClickListener(view2 -> {
-//            gallery.launch("image/*");
-//        });
+
+        gallery1 = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+            @Override
+            public void onActivityResult(Uri result) {
+                uri1 = result;
+                binding2.ivproflieview1.setImageURI(result);
+            }
+        });
+
+
 
         binding.listdoc.setOnItemClickListener((adapterView, view1, i, l) -> {
+
+            binding2 = UpdateDoctorDailogBinding.inflate(getLayoutInflater());
 
             Doctor d = list.get(i);
             String key = keys.get(i);
@@ -237,6 +243,10 @@ public class AdminDoctorFragment extends Fragment {
             binding2.worktime.setText(d.getHour());
             Glide.with(getActivity())
                     .load(d.getPhotoUrl()).into(binding2.ivproflieview1);
+
+            binding2.ivproflieview1.setOnClickListener(view2 -> {
+                gallery1.launch("image/*");
+            });
 
             new AlertDialog.Builder(getActivity())
                     .setTitle("Update doctor details?")
@@ -259,46 +269,46 @@ public class AdminDoctorFragment extends Fragment {
 
                                     adapter.notifyDataSetChanged();
 
-//                                    storageRef = FirebaseStorage.getInstance().getReference("images").child("DoctorImage").child(uid);
-//
-//                                    storageRef.putFile(uri1).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                                        @Override
-//                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                                            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                                @Override
-//                                                public void onSuccess(Uri uri) {
-//
-//                                                    String docId = uri.toString();
-//
-//                                                    Doctor doctor = new Doctor(name,email,docId,expertise,address,hour,d.getUid());
-//
-//                                                    ref.push().setValue(doctor).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                                        @Override
-//                                                        public void onSuccess(Void unused) {
-//                                                            ref.child(key).setValue(doctor);
-//                                                            dialog.dismiss();
-//                                                        }
-//                                                    }).addOnFailureListener(new OnFailureListener() {
-//                                                        @Override
-//                                                        public void onFailure(@NonNull Exception e) {
-//                                                            Log.i("Myerror",e.toString());
-//                                                        }
-//                                                    });
-//                                                }
-//                                            }).addOnFailureListener(new OnFailureListener() {
-//                                                @Override
-//                                                public void onFailure(@NonNull Exception e) {
-//                                                    Log.i("Myerror",e.toString());
-//                                                }
-//                                            });
-//                                        }
-//                                    }).addOnFailureListener(new OnFailureListener() {
-//                                        @Override
-//                                        public void onFailure(@NonNull Exception e) {
-//                                            Log.i("Myerror",e.toString());
-//                                        }
-//                                    });
+                                    storageRef = FirebaseStorage.getInstance().getReference("images").child("DoctorImage").child(doctor.getUid());
+
+                                    storageRef.putFile(uri1).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                            storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+
+                                                    String docId = uri.toString();
+
+                                                    Doctor doctor = new Doctor(name,email,docId,expertise,address,hour,d.getUid());
+
+                                                    ref.push().setValue(doctor).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+                                                            ref.child(key).setValue(doctor);
+                                                            dialogInterface1.dismiss();
+                                                        }
+                                                    }).addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Log.i("Myerror",e.toString());
+                                                        }
+                                                    });
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.i("Myerror",e.toString());
+                                                }
+                                            });
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.i("Myerror",e.toString());
+                                        }
+                                    });
 
                                 }).setNegativeButton("cancel",(dialogInterface1, i2) -> {
                             dialogInterface.dismiss();
