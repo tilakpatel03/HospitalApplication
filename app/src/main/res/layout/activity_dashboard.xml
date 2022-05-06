@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".hospital_application.DashboardActivity"
     android:id="@+id/Drawer"
-    android:background="#ffffff"
-    >
+    android:background="#ffffff">
 
 <!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
@@ -182,7 +181,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/doctorcard"
-                    android:layout_width="250dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
@@ -196,7 +195,7 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="170dp"
+                            android:layout_height="180dp"
                             android:background="@drawable/doctor_tilak"
                             android:scaleType="centerCrop" />
 
@@ -232,7 +231,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/testreportcard"
-                    android:layout_width="250dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:layout_centerHorizontal="true"
@@ -246,8 +245,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="250dp"
-                            android:layout_height="170dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
                             android:background="@drawable/labtest_tilak"
                             android:scaleType="centerCrop" />
 

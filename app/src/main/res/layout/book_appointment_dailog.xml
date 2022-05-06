@@ -46,6 +46,8 @@
             android:layout_below="@id/ivp"
             android:layout_marginTop="12dp"
             android:hint="Doctor Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:gravity="center"
             android:textSize="25dp"/>
 
@@ -91,7 +93,7 @@
             android:layout_marginTop="8dp"
             app:startIconDrawable="@drawable/ic_medical_services"
             app:startIconTint="#168aad"
-            android:hint="Patient Diagnosis"
+            android:hint="Patient Disease"
             android:textColorHint="#adb5bd"
             app:boxStrokeColor="#1282a2"
             app:hintTextColor="#1282a2"
@@ -113,7 +115,7 @@
             android:layout_marginTop="8dp"
             app:startIconDrawable="@drawable/ic_description"
             app:startIconTint="#168aad"
-            android:hint="Diagnosis Description"
+            android:hint="Disease Description"
             android:textColorHint="#adb5bd"
             app:boxStrokeColor="#1282a2"
             app:hintTextColor="#1282a2"
