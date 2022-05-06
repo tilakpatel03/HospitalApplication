@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/docPending"
-        android:title="Pending"
-        android:icon="@drawable/ic_pending"
+        android:title="History"
+        android:icon="@drawable/ic_history"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         android:enabled="true"/>
